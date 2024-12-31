@@ -14,4 +14,4 @@ const aliancaService = new AliancaService();
 
 (new GetNewsUseCase(atualService, itemRepository)).execute();
 (new GetNewsUseCase(ruralService, itemRepository)).execute();
-// (new GetNewsUseCase(aliancaService, itemRepository)).execute();
+(new GetNewsUseCase(aliancaService, itemRepository)).execute();
