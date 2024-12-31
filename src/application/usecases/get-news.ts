@@ -12,6 +12,9 @@ export class GetNewsUseCase {
         for (const item of items) {
             this.itemRepository.create(item);
         }
+
+        const teste = await this.itemRepository.getAll()
+        console.log(teste);
         
     }
 }
