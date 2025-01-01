@@ -9,7 +9,12 @@ export class RuralService implements ApiService {
         const output: Item[] = [];
         for (let visitedPages = 1; visitedPages <= 5; visitedPages++) {
             const response = await fetch(`${this.baseUrl}${visitedPages}`);
-            const mainHtml = await response.text();
+            const buffer = await response.arrayBuffer();
+            const decoder = new TextDecoder('iso-8859-1');
+            const text = decoder.decode(buffer);
+            // console.log(text);
+            // const mainHtml = await response.text();
+            const mainHtml = text;
             const $ = cheerio.load(mainHtml);
             const news = $('.parte_titulo');
             news.each(function (idx, el) {

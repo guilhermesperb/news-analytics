@@ -14,7 +14,7 @@ export class GetNewsUseCase {
         }
 
         const teste = await this.itemRepository.getAll()
-        console.log(teste);
+        // console.log(teste);
         
     }
 }

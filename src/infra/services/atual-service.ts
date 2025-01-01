@@ -54,7 +54,7 @@ export class AtualService implements ApiService {
             const mainHtml = await response.text();
             const $ = cheerio.load(mainHtml);
             const news = $('.entry-title');
-            console.log(news)
+            // console.log(news)
             news.each(function (idx, el) {
                 output.push(new Item($(el).text().trim(), 'atual'))
               });
